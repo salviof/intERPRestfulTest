@@ -1,0 +1,27 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    template="#{layoutsPaginas.modeloGeral.xhtmlVinculado}"
+    xmlns:fb="http://ogp.me/ns/fb#"
+    xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="head"  >
+        <style>
+            .botaoBox {
+
+                margin-top: 3px;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="divConteudo">
+
+
+        <h:panelGroup id="#{paginaAtual.infoPagina.idAreaExbicaoAcaoSelecionada}">
+            <ui:include src="#{paginaAtual.infoPagina.xhtmlAcaoAtual}" />
+        </h:panelGroup>
+
+    </ui:define>
+
+</ui:composition>

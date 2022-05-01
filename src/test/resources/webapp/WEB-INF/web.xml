@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <welcome-file-list>
+        <welcome-file>/site/home.xhtml</welcome-file>
+    </welcome-file-list>
+
+    <context-param>
+        <param-name>com.sun.faces.numberOfViewsInSession</param-name>
+        <param-value>5</param-value>
+    </context-param>
+    <context-param>
+        <param-name>com.sun.faces.application.view.activeViewMapsSize</param-name>
+        <param-value>5</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>com.super_bits.modulosSB.webPaginas.controller.listenners.SessaoHttpListener</listener-class>
+    </listener>
+
+    <context-param>
+
+        <param-name>com.sun.faces.numberOfLogicalViews</param-name>
+        <param-value>3</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.sun.faces.serializeServerState</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>facelets.REFRESH_PERIOD</param-name>
+        <param-value>5</param-value>
+    </context-param>
+
+
+   
+
+    <session-config>
+        <session-timeout>6000</session-timeout>
+    </session-config>
+
+
+
+    <context-param>
+        <param-name>primefaces.CLIENT_SIDE_VALIDATION</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>primefaces.UPLOADER</param-name>
+        <param-value>native</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>primefaces.FONT_AWESOME</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+
+
+
+
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>Super_BitsWebPaginas</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servlets.WebPaginasServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Super_BitsWebPaginas</servlet-name>
+        <url-pattern>*.wp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Super_BitsWebPaginas</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>servletoath2</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servlets.servletRecepcaoOauth.ServletRecepcaoOauth</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletoath2</servlet-name>
+        <url-pattern>/solicitacaoAuth2Recept/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>servletProxyImagem</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servlets.servletProxyImagem.ServletProxyImagem</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletProxyImagem</servlet-name>
+        <url-pattern>/proxyImagem/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>slvGestorDeArquivos</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servlets.servletArquivoDeEntidade.ServletArquivosDeEntidade</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>slvGestorDeArquivos</servlet-name>
+        <url-pattern>/arquivos/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>slvGestorDeArquivosDeSessao</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servlets.servletArquivoDeSessao.ServletArquivoDeSessao</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>slvGestorDeArquivosDeSessao</servlet-name>
+        <url-pattern>/arquivosDeSessao/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>slvArquivoEstaticoUrlPadrao</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servlets.servletEstaticoUrlPadrao.ServletArquivoEstaticoUrlPadrao</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>slvArquivoEstaticoUrlPadrao</servlet-name>
+        <url-pattern>/libUrlPadrao/*</url-pattern>
+    </servlet-mapping>
+
+
+
+
+    <listener>
+        <listener-class>com.super_bits.modulosSB.webPaginas.controller.listenners.ContextoWebPaginas</listener-class>
+    </listener>
+
+
+
+
+
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/resources/SBComp/SBSystemPages/erroGenerico.xhtml</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>com.sun.faces.application.view.FaceletViewHandlingStrategy.handleRenderException</exception-type>
+        <location>/resources/SBComp/SBSystemPages/erroGenerico.xhtml</location>
+    </error-page>
+
+
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/site/404.xhtml</location>
+    </error-page>
+
+
+    <error-page>
+        <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+        <location>/resources/SBComp/SBSystemPages/viewExpirou.xhtml</location>
+    </error-page>
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>adamantium</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+
+
+
+
+    <listener>
+        <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+    </listener>
+
+    <mime-mapping>
+        <extension>ttf</extension>
+        <mime-type>application/font-sfnt</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>woff</extension>
+        <mime-type>application/font-woff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>woff2</extension>
+        <mime-type>application/font-woff2</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>eot</extension>
+        <mime-type>application/vnd.ms-fontobject</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>eot?#iefix</extension>
+        <mime-type>application/vnd.ms-fontobject</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svg</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svg#exosemibold</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svg#exobolditalic</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svg#exomedium</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svg#exoregular</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svg#fontawesomereguslar</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
+
+
+</web-app>

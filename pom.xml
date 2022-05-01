@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.org.coletivoJava.fw.integracoes.erp</groupId>
+    <artifactId>intERPRestfulTest</artifactId>
+    <version>1.0.0-RC-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>intERPRestfulTest</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <jackson-core.version>2.13.0</jackson-core.version>
+        <projetoSB.nomeBanco>integracaoModel</projetoSB.nomeBanco>
+        <projetoSB.cliente>coletivoJava</projetoSB.cliente>
+        <projetoSB.grupoProjeto>integracao</projetoSB.grupoProjeto>
+    </properties>
+    <licenses>
+        <license>
+            <name>WTFPL</name>
+            <url>http://www.wtfpl.net/</url>
+        </license>
+        <license>
+            <name>The New BSD License</name>
+            <url>http://www.opensource.org/licenses/bsd-license.html</url>
+        </license>
+    </licenses>
+    <dependencies>
+
+  
+
+
+        
+
+        <dependency>
+            <groupId>br.org.coletivoJava.fw</groupId>
+            <artifactId>SBRestClient</artifactId>
+            <version>1.0.0-RC-SNAPSHOT</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>br.org.coletivoJava.fw</groupId>
+            <artifactId>SBRestClientTestes</artifactId>
+            <version>1.0.0-RC-SNAPSHOT</version>
+   
+        </dependency>
+
+
+        <dependency>
+            <groupId>br.org.coletivoJava.fw</groupId>
+            <artifactId>SBTestes</artifactId>
+            <version>1.0.0-RC-SNAPSHOT</version>
+      
+        </dependency>
+
+        <dependency>
+            <groupId>br.org.coletivoJava.fw.api.erp.SBErpIntegracaoSistemas</groupId>
+            <artifactId>SBErpIntegracaoSistemas</artifactId>
+            <version>1.0.0-RC-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+            <version>4.11</version>
+        </dependency>
+
+
+
+    </dependencies>
+
+
+
+    <build>
+        <plugins>
+
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                    <archiveClasses>true</archiveClasses>
+                </configuration>
+            </plugin>
+        </plugins>
+
+
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+
+            </resource>
+        </resources>
+
+
+
+    </build>
+
+</project>

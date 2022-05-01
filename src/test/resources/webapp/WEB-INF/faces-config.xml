@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is not required if you don't need any extra configuration. -->
+<faces-config version="2.0"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="
+      http://java.sun.com/xml/ns/javaee
+      http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+    <!-- Write your navigation rules here. You are encouraged to use CDI for creating @Named managed beans. -->
+
+    <converter>
+        <converter-id>conversorGenerico</converter-id>
+        <converter-class>com.super_bits.modulosSB.webPaginas.JSFBeans.util.ConversorGenerico</converter-class>
+    </converter>
+
+    <application>
+        <locale-config>
+            <default-locale>br</default-locale>
+        </locale-config>
+    </application>
+
+
+    <application>
+        <action-listener>
+            org.primefaces.application.DialogActionListener
+        </action-listener>
+        <navigation-handler>
+            org.primefaces.application.DialogNavigationHandler
+        </navigation-handler>
+        <view-handler>
+            org.primefaces.application.DialogViewHandler
+        </view-handler>
+    </application>
+
+
+    <application>
+        <el-resolver>
+            org.primefaces.application.exceptionhandler.PrimeExceptionHandlerELResolver
+        </el-resolver>
+    </application>
+    <factory>
+        <exception-handler-factory>
+            com.super_bits.modulosSB.webPaginas.TratamentoDeErros.FabricaManipuladorErrosJsf
+        </exception-handler-factory>
+    </factory>
+
+
+    <application>
+        <resource-handler>com.super_bits.modulosSB.webPaginas.recursosJSF.RecursosJSF</resource-handler>
+    </application>
+
+
+
+    <lifecycle>
+        <phase-listener>org.primefaces.component.lifecycle.LifecyclePhaseListener</phase-listener>
+    </lifecycle>
+
+    <name>primefaces-adamantium</name>
+
+    <component>
+        <component-type>org.primefaces.component.AdamantiumMenu</component-type>
+        <component-class>org.primefaces.adamantium.component.menu.AdamantiumMenu</component-class>
+    </component>
+
+    <render-kit>
+        <renderer>
+            <component-family>org.primefaces.component</component-family>
+            <renderer-type>org.primefaces.component.AdamantiumMenuRenderer</renderer-type>
+            <renderer-class>org.primefaces.adamantium.component.menu.AdamantiumMenuRenderer</renderer-class>
+        </renderer>
+    </render-kit>
+
+    <render-kit>
+        <renderer>
+            <component-family>org.primefaces.component</component-family>
+            <renderer-type>org.primefaces.component.StepsRenderer</renderer-type>
+            <renderer-class>org.super_bits.tags.steps.EtapasPrimefaces</renderer-class>
+        </renderer>
+    </render-kit>
+
+</faces-config>

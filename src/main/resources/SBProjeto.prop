@@ -1,0 +1,9 @@
+VERSAO=${pom.version}
+NOME_PROJETO=${pom.artifactId}
+NOME_SOCIAL=${pom.name}
+TIPO_PROJETO=${pom.packaging}
+ENDERECO_WEB=https://coletivojava.com.br
+NOME_CLIENTE=coletivoJava
+GRUPO_PROJETO=integracao
+DIRETORIO_BASE=
+NOME_BANCO=${projetoSB.nomeBanco}
