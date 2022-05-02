@@ -32,10 +32,14 @@
     </licenses>
     <dependencies>
 
-  
 
 
-        
+        <dependency>
+            <groupId>br.org.coletivoJava.fw.integracoes.erp</groupId>
+            <artifactId>intERPRestful</artifactId>
+            <version>1.0.0-RC-SNAPSHOT</version>
+        </dependency>
+
 
         <dependency>
             <groupId>br.org.coletivoJava.fw</groupId>
@@ -48,7 +52,7 @@
             <groupId>br.org.coletivoJava.fw</groupId>
             <artifactId>SBRestClientTestes</artifactId>
             <version>1.0.0-RC-SNAPSHOT</version>
-   
+
         </dependency>
 
 
@@ -56,7 +60,7 @@
             <groupId>br.org.coletivoJava.fw</groupId>
             <artifactId>SBTestes</artifactId>
             <version>1.0.0-RC-SNAPSHOT</version>
-      
+
         </dependency>
 
         <dependency>
