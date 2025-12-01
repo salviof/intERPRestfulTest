@@ -4,11 +4,13 @@
  */
 package org.coletivoJava.fw.projetos.integracao.restfulERP.testes.conversorErpResfull;
 
-import br.org.coletivoJava.fw.erp.implementacao.erpintegracao.model.conversor.ConversorERPResfullToJsonAbs;
+import com.super_bits.modulosSB.SBCore.ConfigGeral.CarameloCode;
 import com.super_bits.modulosSB.SBCore.modulos.erp.ItfSistemaERP;
 
 import com.super_bits.modulosSB.SBCore.modulos.erp.conversao.ItfConversorERRestfullToJson;
-import org.coletivojava.fw.utilCoreBase.UtilSBCoreReflexaoAPIERPRestFull;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.coletivojava.fw.utilCoreBase.UtilCRCReflexaoAPIERPRestFull;
 import testesFW.geradorDeCodigo.GeradorClasseGenerico;
 
 /**
@@ -18,11 +20,15 @@ import testesFW.geradorDeCodigo.GeradorClasseGenerico;
 public class GeradorConversorErpRestFullToJson extends GeradorClasseGenerico {
 
     public GeradorConversorErpRestFullToJson(ItfSistemaERP pSistem, Class pClasse) {
-        super(UtilSBCoreReflexaoAPIERPRestFull.getPacoteClassesConversao(pSistem, pClasse), UtilSBCoreReflexaoAPIERPRestFull.getNomeClasseToJson(pSistem, pClasse));
+        super(UtilCRCReflexaoAPIERPRestFull.getPacoteClassesConversao(pSistem, pClasse), UtilCRCReflexaoAPIERPRestFull.getNomeClasseToJson(pSistem, pClasse));
         getCodigoJava().addImport(ItfConversorERRestfullToJson.class);
-        getCodigoJava().addImport(ConversorERPResfullToJsonAbs.class);
+        getCodigoJava().addImport("br.org.coletivoJava.fw.erp.implementacao.erpintegracao.model.conversor.ConversorERPResfullToJsonAbs;");
         getCodigoJava().addInterface(ItfConversorERRestfullToJson.class);
-        getCodigoJava().extendSuperType(ConversorERPResfullToJsonAbs.class);
+        try {
+            getCodigoJava().extendSuperType(CarameloCode.getClasseLoaderAplicacao().loadClass("br.org.coletivoJava.fw.erp.implementacao.erpintegracao.model.conversor.ConversorERPResfullToJsonAbs"));
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(GeradorConversorErpRestFullToJson.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
